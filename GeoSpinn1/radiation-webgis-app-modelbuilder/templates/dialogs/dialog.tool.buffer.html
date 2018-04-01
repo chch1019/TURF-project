@@ -1,0 +1,74 @@
+<button disabled="disabled" data-toggle="tooltip" data-placement="left" title="Buffer" class="tool">
+    <i class="fa fa-3x fa-arrows-alt" aria-hidden="true"></i>
+</button>
+
+<form>
+
+    <ul class="nav nav-tabs">
+	<li><h4 style="">Buffer</h4></li>
+	<li class="pull-right"><a data-toggle="tab" href="#tab_help">Help</a></li>
+	<li class="active pull-right"><a data-toggle="tab" href="#tab_options">Options</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+	<div role="tabpanel" id="tab_options" class="tab-pane fade in active">
+
+	    <br>
+
+	    <div class="form-field form-group">
+		<label for="buffer_layer_title">Layer title</label>
+		<input id="buffer_layer_title" name="buffer_layer_title" type="text" data-required="true" data-min_length="5" data-max_length="50" class="form-control" placeholder="Name">
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+	    </div>
+	    <hr>
+	    
+	    <div class="form-field form-group">
+	
+		<label for="buffer_layer_distance">Buffer distance</label>
+		<div class="form-inline">
+		    <div class="form-group" style="width: 70%">
+			  <input id="buffer_layer_distance" style="width: 100%" name="buffer_layer_distance" type="number" data-required="true" data-min_length="1" data-max_length="15" class="form-control" placeholder="">
+		    </div>
+		    <div class="form-group pull-right">
+			<select id="buffer_layer_units" name="buffer_layer_units" class="form-control">
+			    <option>kilometers</option>
+			    <option>miles</option>
+			</select>
+		    </div>
+		</div>
+		
+	    </div>
+	    <hr>
+	    <div class="form-field form-group">
+		
+		<label for="buffer_layer_style">Style</label>
+		<div class="form-inline well well-sm" style="">
+		    <div class="form-group col-lg-3"  style="margin-top: 2px;">
+			<b>Fill:</b> <input id="buffer_layer_style_fill" name="buffer_layer_style_fill" type="text" class="form-control" placeholder="">
+		    </div>
+		    <div class="form-group col-lg-5" style="margin-top: 2px;">
+			<b>Outline:</b> <input  id="buffer_layer_style_outline" name="buffer_layer_style_outline" type="text" class="form-control" placeholder="">
+		    </div>
+		     <div class="form-group pull-right">
+			<b>Outline width:</b> <input id="buffer_layer_style_outline_width" name="buffer_layer_style_outline_width" value="1" style="width: 60px;" type="number" class="form-control" placeholder="">
+		    </div>
+		    <div class="clearfix"></div>
+		</div>
+
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+		
+	    </div>
+
+
+	</div>
+
+	<div role="tabpanel" id="tab_help" class="tab-pane fade in">
+	    <h5><b>Creates a new layer with the Buffer polygons.</b></h5>
+						The user may select points, polygons or lines.
+						Also, the user must fill in required fields: Layer name, layer title, Details (Buffer distance in milles or kilometers) and if it like to select the layer.
+	</div>
+	
+    </div>   
+ 
+</form>

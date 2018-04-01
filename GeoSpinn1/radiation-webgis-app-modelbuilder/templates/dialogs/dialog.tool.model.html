@@ -1,0 +1,105 @@
+<button enabled="enable" data-toggle="tooltip" data-placement="left" title="Create model" class="tool">
+    <i class="fa fa-3x fa-play" aria-hidden="true"></i>
+</button>
+
+<form>
+
+    <ul class="nav nav-tabs">
+	<li><h4 style="">Model</h4></li>
+    <li class="pull-right"><a data-toggle="tab" href="#model_tab_JSON">JSON eg.</a></li>
+    <li class="pull-right"><a data-toggle="tab" href="#model_tab_help">Help</a></li>
+	<li class="active pull-right"><a data-toggle="tab" href="#model_tab_options">Options</a></li>
+    </ul>
+
+
+    <div class="tab-content">
+
+	<div role="tabpanel" id="model_tab_options" class="tab-pane fade in active">
+
+	    <br>
+
+	    <div class="form-field form-group">
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+	    </div>
+
+	    <div class="form-field form-group">
+            
+            <div >
+				<label for="model_layer_title">Choose Model</label>
+				<select id="models" name="models" class="form-control">
+
+				</select>
+				
+            </div>
+
+	    </div>
+	    <hr>
+		<div id="input_parameters">
+			
+			
+		</div>
+
+	    <div class="form-field form-group">
+	</div> 
+        
+
+	</div>
+    
+
+	<div role="tabpanel" id="model_tab_help" class="tab-pane fade in">
+	    <h5><b>Runs a model </b></h5>
+						Available features are buffer, intersect, difference, combine and union.<br>
+                        Need to select the model, based on selection possible layers will appear. After choosing the layer/layers user can hit a create button to get the model.<br>
+                        Distance for the buffer can be given by user otherwise model will create using default distance. 
+        
+                        
+        <h5><b>User guidelines to create JSON file :</b></h5>
+           
+             1) Type of functionalities/operations must be a string's and always small letters with correct spelling eg. buffer, intersect...<br>
+             2) The id must be an integer eg. 1, 2.<br>
+             3) If the layer taking input using from the previous operation, thus the value of the layer should be integer of that operation <br>
+             4)The operation must take input from preperformed or preprocessed operations <br>
+            <h6><b>parameters :</b></h6>
+                1) Layer names must be string's <br> 
+                2) Buffer distance must be integer and can not be a negetive value <br>
+                3) User definable parmeters must be boolean<br>
+                4) Similarly for dissolve also<br>
+           
+       
+	</div>
+        <div role="tabpanel" id="model_tab_JSON" class="tab-pane fade in">
+        <h5><b>Json file example</b></h5>
+        <pre>
+        {	"model_name" : "my_model",
+            "operations" : [
+                            {
+                             "type": "buffer",
+                             "id"  : 1,
+                             "parameters" :{
+                                  "l1": "input_layer1",
+                                  "radius": {
+                                    "default_dist" : 50,
+                                    "user_defineable" : false,
+                                    "units" : "kilometres",
+                                    "dissolve" : true
+                                  }
+                             }
+                            }, 
+                            {
+                             "type": "difference",
+                             "id"  : 2,
+                             "parameters" : {
+                              "l1": "input_layer3",
+                              "l2": 1 
+                             }
+                            }
+                        ]
+        }
+        </pre>
+        
+        </div>
+	
+    </div>
+
+ 
+</form>

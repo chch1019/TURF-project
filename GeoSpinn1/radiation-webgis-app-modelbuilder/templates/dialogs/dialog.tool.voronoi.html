@@ -1,0 +1,54 @@
+<button disabled="disabled" data-toggle="tooltip" data-placement="left" title="Voronoi polygons" class="tool">
+    <i class="fa fa-3x fa-arrows-alt" aria-hidden="true"></i>
+</button>
+
+<form>
+
+    <ul class="nav nav-tabs">
+	<li><h4 style="">Voronoi</h4></li>
+	<li class="pull-right"><a data-toggle="tab" href="#voronoi_tab_help">Help</a></li>
+	<li class="active pull-right"><a data-toggle="tab" href="#voronoi_tab_options">Options</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+	<div role="tabpanel" id="voronoi_tab_options" class="tab-pane fade in active">
+
+	    <br>
+
+	    <div class="form-field form-group">
+		<label for="voronoi_layer_title">Layer title</label>
+		<input id="voronoi_layer_title" name="voronoi_layer_title" type="text" data-required="true" data-min_length="5" data-max_length="50" class="form-control" placeholder="Name">
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+	    </div>
+	    <hr>
+	    <div class="form-field form-group">
+		
+		<label for="voronoi_layer_style">Style</label>
+		<div class="form-inline well well-sm" style="">
+		    <div class="form-group col-lg-3"  style="margin-top: 2px;">
+			<b>Fill:</b> <input id="voronoi_layer_style_fill" name="voronoi_layer_style_fill" type="text" class="form-control" placeholder="">
+		    </div>
+		    <div class="form-group col-lg-5" style="margin-top: 2px;">
+			<b>Outline:</b> <input  id="voronoi_layer_style_outline" name="voronoi_layer_style_outline" type="text" class="form-control" placeholder="">
+		    </div>
+		     <div class="form-group pull-right">
+			<b>Outline width:</b> <input id="voronoi_layer_style_outline_width" name="voronoi_layer_style_outline_width" value="1" style="width: 60px;" type="number" class="form-control" placeholder="">
+		    </div>
+		    <div class="clearfix"></div>
+		</div>
+
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+		
+	    </div>
+
+	</div>
+
+	<div role="tabpanel" id="voronoi_tab_help" class="tab-pane fade in">
+	     	<h5><b>Create a new layer with voronoi diagram</b></h5> 
+						This tool allows create Voronoi maps, this are constructed from a series of polygons formed around the location of a sample point.
+	</div>
+	
+    </div>   
+ 
+</form>

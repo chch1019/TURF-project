@@ -1,0 +1,448 @@
+* {
+    box-sizing: border-box !important;
+}
+html, body {
+    min-height: 100%;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+#wrapper{
+    margin-top: 65px;
+    min-height: calc(100% - 65px);
+    position: relative;
+    background: white;
+    overflow:hidden;
+}
+
+.controls i {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.group-header, .layer-header {
+    line-height: 30px;
+}
+
+.group-header .title {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.layer-header .title {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+#gisToolbox {
+    display: inline-block !important;
+    z-index: 11;
+
+    border-radius: 4px;
+    overflow: hidden;
+    
+    position: absolute;
+    margin: auto;
+    
+    top: 20%;
+   
+    right: 50px;
+    
+    
+    min-width: 50px;
+    min-height: 50px;	
+
+        background-color: #0275d8;
+	
+	border: 1px solid #005196;
+	
+-webkit-box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+
+}
+
+#gisToolbox .tool-grab {
+    border-bottom: 1px solid #005196;
+    font-size: 12px;
+    background-color: #005196;
+    margin: -1px;
+    height: 20px;
+	padding-left: 5px;
+    padding-right: 5px;
+    cursor: move;
+    display: flex;
+	flex-direction: column;
+}
+
+#gisToolbox .tool-grab .minimizer{
+    width: 20px;
+    height: 20px;
+    max-height: 20px;
+    text-align: center;
+    line-height: 10px;
+    padding: 0px;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+#gisToolbox .tool-grab i {
+    color: white !important;
+}
+
+#gisToolbox > div {
+        background-color: #0275d8;
+	color: white;
+	border: 1px solid #006dcb;
+}
+
+#gisToolbox i {  
+	color: #005196;	
+}
+
+#gisToolbox .toolWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    padding: 2.5px;
+    cursor: move;
+}
+
+#gisToolbox .toolWrapper .tool {
+    width: 50px;
+    height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    min-width: 50px;
+    min-height: 50px;
+    margin: 5px;
+    border: 1px solid #005196;
+    border-radius: 5px;
+    background: #0089ff;
+    cursor: pointer !important;
+}
+
+#gisToolbox .toolWrapper .tool:disabled {
+    opacity: 0.3;
+    cursor: no-drop !important;
+}
+
+#gisToolbox .toolWrapper .tool:not(:disabled):hover {
+   -webkit-box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+    -moz-box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+    box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+}
+
+#gisToolbox .toolWrapper .tool:not(:disabled) i {
+    color: white !important;
+}
+
+.layerSwitcher {
+    z-index: 10;
+    cursor: move;
+    border-radius: 4px;
+    overflow: hidden;
+    position: absolute;
+    margin: auto;
+    top: 20%;
+    left: 50px;
+    width: 400px;
+    padding-left: 5px;
+    padding-right: 5px;
+    min-width: 50px;
+    min-height: 50px;	
+    background-color: white;
+    border: 1px solid #0275d8;
+    -webkit-box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+    -moz-box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+    box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+}
+
+.layerSwitcher .tool-grab {
+    border-bottom: 1px solid #dcdcdc;
+    font-size: 12px;
+    background-color: #0275d8;
+    margin: -5px;
+    margin-bottom: 5px;
+    height: 50px;
+	padding-left: 10px;
+    padding-right: 5px;
+    cursor: move;
+    line-height: 55px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+        display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	overflow: hidden;
+	align-content: space-between;
+	justify-content: space-between;
+	
+}
+.layerSwitcher .tool-grab .title {
+
+}
+
+.layerSwitcher .tool-grab .minimizer {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    max-height: 50px;
+    text-align: right;
+    line-height: 10px;
+    padding-right: 5px;
+    
+   
+    cursor: pointer;
+}
+
+.layerSwitcher .tool-grab .minimizer i {
+        height: 50px;
+    line-height: 44px;
+}
+/*
+#layer_tree, #layer_tree ul {
+    list-style-type: none;
+}
+
+#layer_tree {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#layer_tree, #layer_tree ul li {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#layer_tree .group {
+    margin-left: 20px;
+}
+
+#layer_tree .group ul .group-header {
+    height: 35px;
+    line-height: 35px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #555;
+    color: #e7e7e7;
+    text-indent: 8px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#layer_tree .group ul .group-header .title {
+    font-size: 16px;
+    align-self: flex-start;
+}
+
+#layer_tree .group ul .group-header .controls {
+    align-self: flex-end;
+    font-weight: bold;
+}
+
+#layer_tree .group ul {
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+#layer_tree .group ul {
+   padding-bottom: 60px;
+   border: 1px solid green;
+}
+#layer_tree .placeholder { 
+    display: list-item;
+    height: 1px;
+    background:red; 
+}
+#layer_tree .layer {
+    text-indent: 8px;
+    border: 1px solid #ccc;
+    height: 35px;
+    line-height: 35px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #555;
+    border-radius: 5px;
+    background-color: #e7e7e7;
+    overflow: hidden;
+    vertical-align:bottom;
+}
+
+#layer_tree, #layer_tree ul {
+  
+}
+*/
+
+.placeholder {
+	outline: 1px dashed #4183C4;
+	/*-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	margin: -1px;*/
+}
+
+.mjs-nestedSortable-error {
+	background: #fbe3e4;
+	border-color: transparent;
+}
+
+ol {
+	margin: 0;
+	padding: 0;
+	padding-left: 30px;
+}
+
+ol.sortable, ol.sortable ol {
+	margin: 0 0 0 25px;
+	padding: 0;
+	list-style-type: none;
+}
+
+ol.sortable {
+	margin: 4em 0;
+}
+
+.sortable li {
+	margin: 7.5px 0 0 0;
+	padding: 0;
+}
+
+.sortable li > div  {
+	/*border: 1px solid #d4d4d4; */
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	padding: 2px;
+	
+	cursor: move;
+	/*
+	background: #f6f6f6;
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #ededed 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(47%,#f6f6f6), color-stop(100%,#ededed));
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: -o-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: -ms-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	background: linear-gradient(to bottom,  #ffffff 0%,#f6f6f6 47%,#ededed 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
+	*/
+	display: flex;
+	justify-content: space-between;
+	
+}
+
+ .group {
+    border: 1px solid #d4d4d4; 
+    padding-right: 7.5px !important;
+   
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ededed+0,f6f6f6+4,ffffff+18 */
+background: #ededed; /* Old browsers */
+background: -moz-linear-gradient(top,  #ededed 0%, #f6f6f6 4%, #ffffff 18%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #ededed 0%,#f6f6f6 4%,#ffffff 18%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #ededed 0%,#f6f6f6 4%,#ffffff 18%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+}
+
+.group .layer:last-child {
+    margin-bottom: 7.5px;
+}
+
+.group .group:last-child {
+    margin-bottom: 7.5px;
+}
+
+ .layer {
+    background: #0275d8;
+       border: 1px solid #005196;
+       border-radius: 3px;
+       color: white;
+}
+
+.layer-header .title, .groupayer-header .title {
+    text-indent: 5px;
+}
+
+.sortable i {
+    
+    margin: 2px;
+    border-radius: 3px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    
+}
+
+.sortable .group > .group-header {
+    margin-right: -4px;
+}
+
+.sortable .group > .group-header .controls i {
+    border: 1px solid #d4d4d4;
+}
+
+   
+
+.sortable .layer i {
+    border: 1px solid #005196;
+}
+
+.sortable i:hover {
+    border: 1px solid #005196;
+    margin: 2px;
+    border-radius: 3px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+      -webkit-box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+-moz-box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+box-shadow: 0px 0px 34px -1px rgba(0,0,0,0.44);
+    
+}
+
+.sortable li.mjs-nestedSortable-branch div {
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #f0ece9 100%);
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#f0ece9 100%);
+
+}
+
+.sortable li.mjs-nestedSortable-leaf div {
+	background: -moz-linear-gradient(top,  #ffffff 0%, #f6f6f6 47%, #bcccbc 100%);
+	background: -webkit-linear-gradient(top,  #ffffff 0%,#f6f6f6 47%,#bcccbc 100%);
+
+}
+
+li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
+	border-color: #999;
+	background: #fafafa;
+}
+
+.disclose {
+	cursor: pointer;
+	width: 10px;
+	display: none;
+}
+
+.sortable li.mjs-nestedSortable-collapsed > ol {
+	display: none;
+}
+
+.sortable li.mjs-nestedSortable-branch > div > .disclose {
+	display: inline-block;
+}
+
+.sortable li.mjs-nestedSortable-collapsed > div > .disclose > span:before {
+	content: '+ ';
+}
+
+.sortable li.mjs-nestedSortable-expanded > div > .disclose > span:before {
+	content: '- ';
+}
+
+	

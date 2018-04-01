@@ -1,0 +1,64 @@
+<button disabled="disabled" data-toggle="tooltip" data-placement="left" title="Find nearest point" class="tool">
+    <i class="fa fa-3x fa-map-marker" aria-hidden="true"></i>
+</button>
+
+<form>
+
+    <ul class="nav nav-tabs">
+	<li><h4 style="">Nearest point</h4></li>
+	<li class="pull-right"><a data-toggle="tab" href="#nearest_tab_help">Help</a></li>
+	<li class="active pull-right"><a data-toggle="tab" href="#nearest_tab_options">Options</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+	<div role="tabpanel" id="nearest_tab_options" class="tab-pane fade in active">
+
+	    <br>
+	    
+	   <div class="form-field form-group">
+		<label for="nearest_layer_title">Layer title</label>
+		<input id="nearest_layer_title" name="nearest_layer_title" type="text" data-required="true" data-min_length="5" data-max_length="50" class="form-control" placeholder="Name">
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+	    </div>
+	    
+	    <div class="form-field form-group">
+		<label for="nearest_layer_surveyed">Surveyed point layer</label>
+		<select id="nearest_layer_surveyed" name="nearest_layer_surveyed" type="text" data-required="true" class="form-control">
+		    <option selected="selected"></option>
+		</select>
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+	    </div>
+	    
+	    <hr>
+	    <div class="form-field form-group">
+		
+		<label for="nearest_layer_style">Style</label>
+		<div class="form-inline well well-sm" style="">
+		    <div class="form-group col-lg-3"  style="margin-top: 2px;">
+			<b>Fill:</b> <input id="nearest_layer_style_fill" name="nearest_layer_style_fill" type="text" class="form-control" placeholder="">
+		    </div>
+		    <div class="form-group col-lg-5" style="margin-top: 2px;">
+			<b>Outline:</b> <input  id="nearest_layer_style_outline" name="nearest_layer_style_outline" type="text" class="form-control" placeholder="">
+		    </div>
+		     <div class="form-group pull-right">
+			<b>Outline width:</b> <input id="nearest_layer_style_outline_width" name="nearest_layer_style_outline_width" value="1" style="width: 60px;" type="number" class="form-control" placeholder="">
+		    </div>
+		    <div class="clearfix"></div>
+		</div>
+
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+		
+	    </div>
+
+	</div>
+
+	<div role="tabpanel" id="nearest_tab_help" class="tab-pane fade in">  
+	    <h5><b>Creates a new layer which contains the nearest point to the selected point.</b></h5> 
+						The user must to select only one point.
+						The user must fill in the required fields: Layer name, layer title,  and if it like to select the layer.</td>
+	</div>
+	
+    </div>   
+ 
+</form>

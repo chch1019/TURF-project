@@ -1,0 +1,76 @@
+{
+	"all_models" : [
+					{	"model_name" : "test_model",
+						"operations" : [
+										{
+										 "type": "buffer",
+										 "id"  : 300,
+										 "parameters" :{
+											  "l1": "buffer_layer",
+											  "radius": {
+												"default_dist" : 10,
+												"user_defineable" : true,
+												"units" : "kilometres",
+												"dissolve" : true
+											  }
+										 }
+										},
+										{
+										 "type": "intersect",
+										 "id"  : 2,
+										 "parameters" :{
+											  "l1": 300,
+											  "l2": "intersect_layer"	
+										 }
+										}
+									]
+					},
+					{	"model_name" : "my_model",
+						"operations" : [
+										{
+										 "type": "buffer",
+										 "id"  : 1,
+										 "parameters" :{
+											  "l1": "buffer_layer1",
+											  "radius": {
+												"default_dist" : 50,
+												"user_defineable" : true,
+												"units" : "kilometres",
+												"dissolve" : true
+											  }
+										 }
+										}, 
+										{
+										 "type": "union",
+										 "id"  : 2,
+										 "parameters" : {
+										  "l1": 1,
+										  "l2": "union_layer2"
+										 }
+										},
+										{
+										 "type": "difference",
+										 "id"  : 3,
+										 "parameters" : {
+										  "l1": 2,
+										  "l2": "difference_layer3"
+										 }
+										},
+										{
+										 "type": "buffer",
+										 "id"  : 4,
+										 "parameters" :{
+											  "l1": 3,
+											  "radius": {
+												"default_dist" : 20,
+												"user_defineable" : true,
+												"units" : "kilometres",
+												"dissolve" : true
+											  }
+										 }
+										}
+									]
+					}
+					
+				]
+}

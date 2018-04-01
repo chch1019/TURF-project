@@ -1,0 +1,68 @@
+<button disabled="disabled" data-toggle="tooltip" data-placement="left" title="Search points within" class="tool">
+    <i class="fa fa-3x fa-sign-in" aria-hidden="true"></i>
+</button>
+
+<form>
+
+    <ul class="nav nav-tabs">
+	<li><h4 style="">Point within polygon</h4></li>
+	<li class="pull-right"><a data-toggle="tab" href="#within_tab_help">Help</a></li>
+	<li class="active pull-right"><a data-toggle="tab" href="#within_tab_options">Options</a></li>
+    </ul>
+
+    <div class="tab-content">
+
+	<div role="tabpanel" id="within_tab_options" class="tab-pane fade in active">
+
+	    <br>
+
+	   <div class="form-field form-group">
+		<label for="within_layer_title">Layer title</label>
+		<input id="within_layer_title" name="within_layer_title" type="text" data-required="true" data-min_length="5" data-max_length="50" class="form-control" placeholder="Name">
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+	    </div>
+
+	    <div class="form-field form-group">
+		<label for="within_layer_surveyed">Surveyed point layer</label>
+		<select id="within_layer_surveyed" name="within_layer_surveyed" type="text" data-required="true" class="form-control">
+		    <option selected="selected"></option>
+		</select>
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+	    </div>
+	   
+	    
+
+	     <hr>
+	    <div class="form-field form-group">
+		
+		<label for="within_layer_style">Style</label>
+		<div class="form-inline well well-sm" style="">
+		    <div class="form-group col-lg-3"  style="margin-top: 2px;">
+			<b>Fill:</b> <input id="within_layer_style_fill" name="within_layer_style_fill" type="text" class="form-control" placeholder="">
+		    </div>
+		    <div class="form-group col-lg-5" style="margin-top: 2px;">
+			<b>Outline:</b> <input  id="within_layer_style_outline" name="within_layer_style_outline" type="text" class="form-control" placeholder="">
+		    </div>
+		     <div class="form-group pull-right">
+			<b>Outline width:</b> <input id="within_layer_style_outline_width" name="within_layer_style_outline_width" value="1" style="width: 60px;" type="number" class="form-control" placeholder="">
+		    </div>
+		    <div class="clearfix"></div>
+		</div>
+
+		<div style="display: none; margin-top: 5px; padding: 7.5px;" class="alert alert-danger" role="alert"> </div>
+		
+	    </div>
+
+	    
+	    
+	</div>
+
+	<div role="tabpanel" id="within_tab_help" class="tab-pane fade in">
+	    <h5><b>Create a new layer only with the point features which are within the selected polygons.</b></h5>
+						The user must to select continuous polygons which has points inside.  
+						The user must fill in the required fields: Layer name, layer title,  and if it like to select the layer.</td>
+	</div>
+	
+    </div>   
+ 
+</form>
